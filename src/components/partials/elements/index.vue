@@ -3,9 +3,9 @@
     <h2>SEARCH BOX</h2>
     <ui-searchbox
       v-model="searchInputOne"
-      class="w-2/3"
+      class="w-2/3 "
       :ui-input__placeholder="dynamicPlaceholder"
-      ui-input__class="pl-16"
+      ui-input__class="pl-16 w-2/3"
       @ui-button__click="event('ui-button-click', 'One')"
     />
     v-model: {{ searchInputOne }}
@@ -13,7 +13,7 @@
       v-model="searchInputTwo"
       class="w-7/12 mt-4 mb-2"
       ui-input__placeholder="Custom placeholder with icon and styles"
-      ui-input-override-class="pr-4 py-2 bg-gray-800 rounded-lg text-sm placeholder-gray-400 text-white focus:bg-gray-400 focus:placeholder-gray-600 focus:text-gray-900 focus:outline-none"
+      ui-input__override-class="pr-4 py-2 bg-gray-800 rounded-lg text-sm placeholder-gray-400 text-white focus:bg-gray-400 focus:placeholder-gray-600 focus:text-gray-900 focus:outline-none"
       ui-button__class="bg-yellow-300"
       @ui-button__click="event('ui-button-click', 'Two')"
     >
@@ -167,12 +167,12 @@
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
         <ui-table
-          class="block p-12"
+          class="w-full"
           @click="e => event('table', e)"
         >
           <template #tableHeader>
             <ui-table-head
-              class="w-full"
+              class="text-gray-900 flex"
               @click.stop="e => event('table-head', e)"
             >
               <div>AAAA</div>

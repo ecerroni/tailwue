@@ -40,7 +40,7 @@ export default {
   },
   mixins: [uiMixin],
   props: {
-    atom: {
+    __atom: { // eslint-disable-line
       type: Object,
       default: () => {
         const atom = uiAtom

@@ -12,7 +12,7 @@
       Custom
     </ui-button>
     <ui-button
-      class="mb-4 bg-blue-700 text-gray-300"
+      class="mb-4 bg-blue-400 text-gray-300"
       @click="e => event('click', e)"
       @mouseleave="e => event('mouseleave', e)"
     >
