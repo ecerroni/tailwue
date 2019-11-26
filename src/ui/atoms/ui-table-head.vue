@@ -5,23 +5,28 @@ i<template functional>
         v-for="(head, index) in props.headers"
         :key="head"
         v-bind="$options.methods.wrapper('cleanFromNestedAttrs', [data.attrs, injections])"        
-        v-on="$options.methods.wrapper('cleanFromNestedListeners', [{
-          ...listeners,
-          }, injections,
-          /* with the next obj param choose what event to override (click) and what to emit ({ value: head, index }) */
-          { click: { value: head, index } }])"
         :class="$options.methods.getClass(props.overrideClass, data.staticClass, data.class, 'px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider')"
-      >{{head}}</th>
+        v-on="$options.methods.wrapper('cleanFromNestedListeners', [{
+                                                                      ...listeners,
+                                                                    }, injections,
+                                                                    /* with the next obj param choose what event to override (click) and what to emit ({ value: head, index }) */
+                                                                    { click: { value: head, index } }])"
+      >
+        {{ head }}
+      </th>
     </tr>
     <tr v-else>
       <th
         v-for="row in slots().default"
         :key="row.name"
         v-bind="$options.methods.wrapper('cleanFromNestedAttrs', [data.attrs, injections])"
-        v-on="$options.methods.wrapper('cleanFromNestedListeners', [listeners, injections])"
-        :class="$options.methods.getClass(props.overrideClass, data.staticClass, data.class, 'px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider')"        
+        :class="$options.methods.getClass(props.overrideClass, data.staticClass, data.class, 'px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider')"
+        v-on="$options.methods.wrapper('cleanFromNestedListeners', [listeners, injections])"        
       >
-        <component :is="injections.components['Vnodes']" :vnodes="row"/>
+        <component
+          :is="injections.components['Vnodes']"
+          :vnodes="row"
+        />
       </th>
     </tr>
   </thead>
@@ -30,6 +35,7 @@ i<template functional>
 import uiMixin from '../mixins';
 
 export default {
+  mixins: [uiMixin],
   props: {
     headers: {
       type: Array,
@@ -40,7 +46,6 @@ export default {
       default: '',
     },
   },
-  mixins: [uiMixin],
   inject: {
     components: {
       default: {

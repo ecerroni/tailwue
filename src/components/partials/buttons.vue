@@ -1,16 +1,29 @@
 <template>
   <div class="flex flex-col">
-    <ui-button @click="event('click')" @mouseenter="event('mouseenter')" class="mb-4"/>
-    <ui-button @click="event('click')" class="mb-4 bg-red-100">Custom</ui-button>
     <ui-button
+      class="mb-4"
+      @click="event('click')"
+      @mouseenter="event('mouseenter')"
+    />
+    <ui-button
+      class="mb-4 bg-red-100"
+      @click="event('click')"
+    >
+      Custom
+    </ui-button>
+    <ui-button
+      class="mb-4 bg-blue-700 text-gray-300"
       @click="e => event('click', e)"
       @mouseleave="e => event('mouseleave', e)"
-      class="mb-4 bg-blue-700 text-gray-300"
-    >Class manipulation</ui-button>
+    >
+      Class manipulation
+    </ui-button>
     <ui-button
+      override-class="mb-4 bg-red-100  bg-green-100 rounded py-4"
       @click="event('click')"
-      overrideClass="mb-4 bg-red-100  bg-green-100 rounded py-4"
-    >Total Override</ui-button>
+    >
+      Total Override
+    </ui-button>
   </div>
 </template>
 <script>

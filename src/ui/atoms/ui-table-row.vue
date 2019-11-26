@@ -8,7 +8,10 @@
       :key="index"
       :class="$options.methods.getClass(props.overrideClass, data.staticClass, data.class, 'px-5 py-5 border-b border-gray-200 bg-white text-sm')"
     >
-      <component :is="injections.components['Vnodes']" :vnodes="td"/>
+      <component
+        :is="injections.components['Vnodes']"
+        :vnodes="td"
+      />
     </td>
   </tr>
 </template>
@@ -16,13 +19,13 @@
 import uiMixin from '../mixins';
 
 export default {
+  mixins: [uiMixin],
   props: {
     overrideClass: {
       type: String,
       default: '',
     },
   },
-  mixins: [uiMixin],
   inject: {
     components: {
       default: {

@@ -1,20 +1,20 @@
 <template functional>
   <button
     v-bind="$options.methods.wrapper('cleanFromNestedAttrs', [data.attrs, injections])"
-    v-on="$options.methods.cleanFromNestedListeners(listeners, injections, { click: props.linkItem })"
     :class="$options.methods.getClass(props.overrideClass, data.staticClass, data.class, props.__atom.class)"
     type="button"
     :aria-selected="props.selected"
     class
+    v-on="$options.methods.cleanFromNestedListeners(listeners, injections, { click: props.linkItem })"
   >
     <div :class="props.selected ? 'text-indigo-400' : 'text-gray-500'">
-      <slot name="icon"/>
+      <slot name="icon" />
     </div>
     <component :is="injections.components['UiMenuItemLink']">
       <div
         v-bind="$options.methods.keepNestedComponentAttrs(data.attrs, 'UiMenuItemLink')"
-        v-on="$options.methods.filterNestedComponentListeners(listeners, 'UiMenuItemLink')"
         :class="$options.methods.getNestedComponentClasses(data.attrs, 'UiMenuItemLink', `${props.selected ? 'text-indigo-600' : 'text-gray-700'} ${props.__atom.child.class}`)"
+        v-on="$options.methods.filterNestedComponentListeners(listeners, 'UiMenuItemLink')"
       >
         <slot>Link</slot>
       </div>
@@ -38,8 +38,9 @@ export default {
       },
     },
   },
+  mixins: [uiMixin],
   props: {
-    __atom: {
+    atom: {
       type: Object,
       default: () => {
         const atom = uiAtom
@@ -65,6 +66,5 @@ export default {
       default: '',
     },
   },
-  mixins: [uiMixin],
 };
 </script>

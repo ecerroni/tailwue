@@ -1,18 +1,22 @@
 <template>
   <div class="m-8">
-    <h1 class="flex justify-center font-semibold text-gray-700 text-lg">ATOMS</h1>
+    <h1 class="flex justify-center font-semibold text-gray-700 text-lg">
+      ATOMS
+    </h1>
     <h2>BUTTONS</h2>
-    <buttons/>
+    <buttons />
 
     <h2>INPUTS</h2>
-    <inputs/>
+    <inputs />
 
     <h2>ITEMS</h2>
-    <items/>
+    <items />
     <hr class="my-12">
 
-    <h1 class="flex justify-center font-semibold text-gray-700 text-lg">ELEMENTS</h1>
-    <elements/>
+    <h1 class="flex justify-center font-semibold text-gray-700 text-lg">
+      ELEMENTS
+    </h1>
+    <elements />
   </div>
 </template>
 <script>
@@ -37,15 +41,15 @@ export default {
     Inputs,
     Elements,
     //
-    UiButton,
-    UiInput,
-    UiIcon,
-    UiLabel,
-    UiSearchbox,
-    UiTable,
-    UiTableHeader,
-    UiTableBody,
-    UiTableRow,
+    // UiButton,
+    // UiInput,
+    // UiIcon,
+    // UiLabel,
+    // UiSearchbox,
+    // UiTable,
+    // UiTableHeader,
+    // UiTableBody,
+    // UiTableRow,
     Items,
   },
   data() {
